@@ -1,0 +1,229 @@
+/* reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* header: logo e menu lado a lado  */
+header {
+  /* display: flex; deixa os elementos do header em linha */
+  align-items: center; /* alinha verticalmente logo e menu */
+  justify-content: flex-start; /* logo e menu juntos à esquerda */
+  gap: 20px; /* espaço entre a logo e o menu */
+  background-position: left top;
+  padding: 0 20px; /* espaçamento lateral opcional */
+}
+
+body {
+  background: url("./fundo.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  line-height: 1.6;
+  text-align: center;
+}
+
+
+/* logo */
+#logo {
+  width: 100px;
+  height: auto;
+  border-radius: 25%;
+  margin: 20px;
+  transition: transform 0.3s ease; /* deixa a animação suave */
+}
+
+#logo:hover {
+  transform: scale(1.1); /* aumenta 10% quando passa o mouse */
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.menu a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  padding-bottom: 5px;
+  transition: color 0.3s;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.3s;
+}
+
+.menu a:hover {
+  color: #e8f800;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* arte do cantor */
+#arte {
+  border-radius: 10%;
+  max-width: 40%;
+  height: auto;
+  margin: 20px 0;
+}
+
+/* biografia*/
+#biografia {
+  font-size: 95%;
+  background-color: rgba(30, 30, 30, 0.3); /* 0.4 = 40% opaco */
+  padding: 60px 20px;
+  color: #f2f2f2;
+  border-radius: 15px; 
+}
+
+
+#biografia h1 {
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+  animation: brilho 2s infinite alternate;
+}
+
+@keyframes brilho {
+  from { text-shadow: 0 0 5px #ffcc00; }
+  to { text-shadow: 0 0 20px #ffcc00, 0 0 30px #fff; }
+}
+.bio-container {
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+#biografia h1 {
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #ffcc00;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+#biografia p {
+  font-size: 1.05em;
+  margin-bottom: 20px;
+  text-align: justify;
+  text-indent: 2em;
+}
+
+#agenda h1{
+  font-size: 2em;
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+  animation: brilho 2s infinite alternate;
+
+}
+
+/* seções */
+section {
+  margin: 40px 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+#contatos {
+  border-top: 2px solid #ffcc00;
+  background-color: rgba(30, 30, 30, 0.4); /* 0.4 = 40% opaco */
+  padding: 60px 20px;
+  color: #f2f2f2;
+  border-radius: 15px;
+}
+
+#contatos h1 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contato-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.contato-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+}
+
+.contato-item:hover {
+  background-color: #ffcc00;
+  color: #000;
+  transform: scale(1.03);
+}
+
+.contato-item img {
+  width: 28px;
+  height: 30px;
+}
+
+
+#shows{
+  max-width: 25%;
+  border-radius: 20%;
+}
+
+
+/* redes sociais */
+#redes-sociais a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+#redes-sociais img {
+  max-width: 90%;
+  height: 90px;
+  transition: transform 0.3s;
+}
+
+/* animação de crescimento, quando passa mouse */
+#redes-sociais img:hover {
+  transform: scale(1.2);
+}
+
+footer {
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
