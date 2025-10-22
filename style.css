@@ -227,3 +227,21 @@ footer {
   font-size: 14px;
 }
 
+/* estilizaçao da barra de rolagem */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(240, 240, 240, 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d6c952, #1a1b1b);
+  border-radius: 10px;
+}
+
+
+
+
