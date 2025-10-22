@@ -5,14 +5,13 @@
   box-sizing: border-box;
 }
 
-/* header: logo e menu lado a lado  */
+/* header */
 header {
-  /* display: flex; deixa os elementos do header em linha */
-  align-items: center; /* alinha verticalmente logo e menu */
-  justify-content: flex-start; /* logo e menu juntos à esquerda */
-  gap: 20px; /* espaço entre a logo e o menu */
-  background-position: left top;
-  padding: 0 20px; /* espaçamento lateral opcional */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centraliza a logo no meio */
+  background-position: center top;
+  padding: 20px 0;
 }
 
 body {
@@ -24,20 +23,20 @@ body {
   text-align: center;
 }
 
-
 /* logo */
 #logo {
   width: 100px;
   height: auto;
   border-radius: 25%;
   margin: 20px;
-  transition: transform 0.3s ease; /* deixa a animação suave */
+  transition: transform 0.3s ease;
 }
 
 #logo:hover {
-  transform: scale(1.1); /* aumenta 10% quando passa o mouse */
+  transform: scale(1.1);
 }
 
+/* menu */
 .menu ul {
   list-style: none;
   display: flex;
@@ -74,7 +73,7 @@ body {
   width: 100%;
 }
 
-/* arte do cantor */
+/* imagens principais */
 #arte {
   border-radius: 10%;
   max-width: 40%;
@@ -82,32 +81,18 @@ body {
   margin: 20px 0;
 }
 
-/* biografia*/
+/* biografia */
 #biografia {
   font-size: 95%;
-  background-color: rgba(30, 30, 30, 0.3); /* 0.4 = 40% opaco */
+  background-color: rgba(30, 30, 30, 0.3);
   padding: 60px 20px;
   color: #f2f2f2;
   border-radius: 15px; 
 }
 
-
 #biografia h1 {
   text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
   animation: brilho 2s infinite alternate;
-}
-
-@keyframes brilho {
-  from { text-shadow: 0 0 5px #ffcc00; }
-  to { text-shadow: 0 0 20px #ffcc00, 0 0 30px #fff; }
-}
-.bio-container {
-  max-width: 900px;
-  margin: 0 auto;
-  line-height: 1.8;
-}
-
-#biografia h1 {
   font-size: 2em;
   font-weight: 700;
   margin-bottom: 25px;
@@ -126,14 +111,30 @@ body {
   text-indent: 2em;
 }
 
-#agenda h1{
+@keyframes brilho {
+  from { text-shadow: 0 0 5px #ffcc00; }
+  to { text-shadow: 0 0 20px #ffcc00, 0 0 30px #fff; }
+}
+
+.bio-container {
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* agenda */
+#agenda h1 {
   font-size: 2em;
   text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
   animation: brilho 2s infinite alternate;
-
 }
 
-/* seções */
+#shows {
+  max-width: 25%;
+  border-radius: 20%;
+}
+
+/* seções e animações */
 section {
   margin: 40px 20px;
   opacity: 0;
@@ -146,10 +147,10 @@ section.visible {
   transform: translateY(0);
 }
 
-
+/* contatos */
 #contatos {
   border-top: 2px solid #ffcc00;
-  background-color: rgba(30, 30, 30, 0.4); /* 0.4 = 40% opaco */
+  background-color: rgba(30, 30, 30, 0.4);
   padding: 60px 20px;
   color: #f2f2f2;
   border-radius: 15px;
@@ -194,13 +195,6 @@ section.visible {
   height: 30px;
 }
 
-
-#shows{
-  max-width: 25%;
-  border-radius: 20%;
-}
-
-
 /* redes sociais */
 #redes-sociais a {
   margin: 0 10px;
@@ -213,11 +207,11 @@ section.visible {
   transition: transform 0.3s;
 }
 
-/* animação de crescimento, quando passa mouse */
 #redes-sociais img:hover {
   transform: scale(1.2);
 }
 
+/* rodapé */
 footer {
   background-color: rgba(0,0,0,0.6);
   color: #fff;
@@ -227,7 +221,7 @@ footer {
   font-size: 14px;
 }
 
-/* estilizaçao da barra de rolagem */
+/* barra de rolagem */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -240,8 +234,67 @@ footer {
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #d6c952, #1a1b1b);
   border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
 }
 
+/* responsividade */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
+  #logo {
+    width: 80px;
+    margin: 10px 0;
+  }
 
+  .menu ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
 
+  #arte {
+    max-width: 80%;
+  }
+
+  #biografia, #contatos {
+    padding: 30px 15px;
+  }
+
+  .contato-item {
+    font-size: 1em;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #shows {
+    max-width: 80%;
+  }
+
+  #redes-sociais img {
+    height: 60px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
+
+/* responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+  .menu ul {
+    gap: 10px;
+  }
+
+  #biografia h1, #agenda h1, #contatos h1 {
+    font-size: 1.5em;
+  }
+
+  #biografia p {
+    font-size: 0.95em;
+    text-indent: 1em;
+  }
+}
